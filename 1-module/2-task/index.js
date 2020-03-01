@@ -1,16 +1,38 @@
-/**
- * Эту функцию трогать не нужно
- */
+
 function print(text) {
   console.log(text);
 }
 
-/**
- * Эту функцию нужно поменять так,
- * чтобы функция sayHello работала корректно
- */
+
 function isValid(name) {
+  if ((name) && 
+      (!isAGapinAName(name)) &&
+      (isNameLongEnough(name))) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
+
+function isAGapinAName(name) {
+  if (~name.indexOf(" ")) {
+    return true; 
+  }
+  else {
+    return false;
+  }
+}
+
+function isNameLongEnough(name) {
+  if (name.length >= 4) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
 
 function sayHello() {
   const userName = prompt('Введите ваше имя');
